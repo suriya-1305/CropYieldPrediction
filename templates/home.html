@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Predict</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Type of Crop Prediction</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Phosphorus" placeholder="Enter Phosphorus" required="required" /><br>
+    	<input type="text" name="Nitrogen" placeholder="Enter Nitrogen" required="required" /><br>
+        <input type="text" name="Potassium" placeholder="Enter Potassium" required="required" /><br>
+        <input type="text" name="ph" placeholder="Enter ph" required="required" /><br>
+        <input type="text" name="humidity" placeholder="Enter Humidity" required="required" /><br>
+        <input type="text" name="temperature" placeholder="Enter Temperature" required="required" /><br>
+        <input type="text" name="rainfall" placeholder="Enter Rainfall" required="required" /><br>
+
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
